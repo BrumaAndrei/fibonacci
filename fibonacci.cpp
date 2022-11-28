@@ -1,4 +1,9 @@
-list <int> abc (int n) {
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+list <int> fibStr (int n) {
   list<int> list1;
   list1.push_back(0);
   list1.push_back(1);
@@ -15,4 +20,14 @@ if (n == 1)
 if (n <= 0)
     list1.clear();
 return list1;
+}
+
+int main()
+{
+list<int> list2;
+ list2 = fibStr(5);
+for (int x : list2) {
+		cout << x << " ";
+	}
+    return 0;
 }
