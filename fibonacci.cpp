@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include <list>
 
 using namespace std;
@@ -17,17 +18,28 @@ list <int> fibStr (int n) {
 }
 if (n == 1)
     list1.pop_back();
-if (n <= 0)
+if (n < 0)
+    throw std::invalid_argument("you entered a negative number");
+if (n == 0)
     list1.clear();
 return list1;
 }
 
 int main()
 {
-list<int> list2;
- list2 = fibStr(5);
+
+try {
+    list<int> list2;
+ list2 = fibStr(2);
 for (int x : list2) {
 		cout << x << " ";
 	}
+
+}
+catch (std::invalid_argument& e)
+    {
+        cerr << e.what() << endl;
+        return -1;
+    }
     return 0;
 }
