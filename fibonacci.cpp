@@ -4,11 +4,11 @@
 
 using namespace std;
 
-list <int> fibStr (int n) {
-  list<int> list1;
+list <unsigned long long int> fibStr (int n) {
+  list<unsigned long long int> list1;
   list1.push_back(0);
   list1.push_back(1);
-  int i = 3, v[100], term; // first term
+  unsigned long long int i = 3, v[1000], term; // first term
   v[1] = 0, v[2] = 1;
   while (i <= n) {
   term = v[i-1] + v[i-2];
@@ -29,9 +29,9 @@ int main()
 {
 
 try {
-    list<int> list2;
- list2 = fibStr(2);
-for (int x : list2) {
+    list<unsigned long long int> list2;
+ list2 = fibStr(95);
+for (unsigned long long int x : list2) {
 		cout << x << " ";
 	}
 
